@@ -18,7 +18,7 @@ type NewsListProps = {
 	category: string;
 };
 
-const NewsList = ({ category }: NewsListProps) => {
+function NewsList({ category }: NewsListProps) {
 	const [datetime] = useState(new Date());
 	const [articles, setArticles] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -73,6 +73,6 @@ const NewsList = ({ category }: NewsListProps) => {
 			)}
 		</NewsListBlock>
 	);
-};
+}
 
 export default NewsList;

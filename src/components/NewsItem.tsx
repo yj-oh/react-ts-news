@@ -44,7 +44,7 @@ const NewsItemBlock = styled.div`
 	}
 `;
 
-const NewsItem: React.FC<props> = ({title, description, url, urlToImage}) => {
+function NewsItem({ title, description, url, urlToImage }: props) {
 	return (
 		<NewsItemBlock>
 			{urlToImage && (
@@ -72,6 +72,6 @@ const NewsItem: React.FC<props> = ({title, description, url, urlToImage}) => {
 			</div>
 		</NewsItemBlock>
 	);
-};
+}
 
 export default NewsItem;
