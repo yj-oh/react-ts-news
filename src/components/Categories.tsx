@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { Category } from '../types/type';
 
-const categories = [
+const categories: Category[] = [
 	{
 		name: 'all',
 		text: '전체',
@@ -34,7 +35,7 @@ const CategoriesBlock = styled.div`
 	background-color: rgb(245, 245, 245);
 `;
 
-const Category = styled(NavLink)`
+const CategoryItem = styled(NavLink)`
 	padding: 5px 10px;
 	min-width: 12%;
 	font-size: 1.02rem;
@@ -62,14 +63,14 @@ const Categories = () => {
 	return (
 		<CategoriesBlock>
 			{categories.map((c) => (
-				<Category
+				<CategoryItem
 					key={c.name}
 					activeClassName='active'
 					exact={c.name === 'all'}
 					to={c.name === 'all' ? '/' : `${c.name}`}
 				>
 					{c.text}
-				</Category>
+				</CategoryItem>
 			))}
 		</CategoriesBlock>
 	);

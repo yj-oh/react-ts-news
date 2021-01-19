@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NewsItem from './NewsItem';
 import axios from 'axios';
+import { articleProps } from '../types/type';
 
 const NewsListBlock = styled.div`
 	padding: 0.2rem 1rem 1rem 1rem;
@@ -55,22 +56,15 @@ function NewsList({ category }: NewsListProps) {
 						datetime.toLocaleTimeString()}
 				</p>
 			</header>
-			{articles.map(
-				(article: {
-					url: string | null;
-					title: string;
-					description: string;
-					urlToImage?: string | null;
-				}) => (
-					<NewsItem
-						key={article.url}
-						title={article.title}
-						description={article.description}
-						url={article.url}
-						urlToImage={article.urlToImage}
-					/>
-				),
-			)}
+			{articles.map((article: articleProps) => (
+				<NewsItem
+					key={article.url}
+					title={article.title}
+					description={article.description}
+					url={article.url}
+					urlToImage={article.urlToImage}
+				/>
+			))}
 		</NewsListBlock>
 	);
 }

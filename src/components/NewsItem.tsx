@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-interface props {
-	title?: string;
-	description?: string;
-	url?: string | null;
-	urlToImage?: string | null;
-}
+import { articleProps } from '../types/type';
 
 const NewsItemBlock = styled.div`
 	display: table;
@@ -44,7 +38,7 @@ const NewsItemBlock = styled.div`
 	}
 `;
 
-function NewsItem({ title, description, url, urlToImage }: props) {
+function NewsItem({ title, description, url, urlToImage }: articleProps) {
 	return (
 		<NewsItemBlock>
 			{urlToImage && (
