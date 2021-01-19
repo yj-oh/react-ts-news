@@ -27,6 +27,7 @@ const categories = [
 
 const CategoriesBlock = styled.div`
 	display: flex;
+	justify-content: center;
 	padding: 1.5rem 1rem 1rem 1rem;
 	width: calc(100% - 2rem);
 	margin: 0 auto;
@@ -35,7 +36,7 @@ const CategoriesBlock = styled.div`
 
 const Category = styled(NavLink)`
 	padding: 5px 10px;
-	min-width: 35px;
+	min-width: 12%;
 	font-size: 1.02rem;
 	text-align: center;
 	color: #868686;
